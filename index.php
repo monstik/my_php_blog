@@ -1,2 +1,16 @@
 <?php
-echo "привет я стартовая страничка твоего фреймворка";
+use application\core\Route;
+require_once "application/lib/Dev.php";
+spl_autoload_register(function($class)
+{
+    $path = $class . ".php";
+    if (file_exists($path))
+    {
+        require_once $path;
+    }
+});
+
+
+
+$router = new Route();
+$router->run();

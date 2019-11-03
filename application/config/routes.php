@@ -8,4 +8,8 @@ return[
         'controller' => 'account',
         'action' => 'register'
     ],
+    '' =>[
+        'controller' => 'main',
+        'action' => 'index'
+    ],
 ];
