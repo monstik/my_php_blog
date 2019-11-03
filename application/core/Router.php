@@ -3,7 +3,7 @@
 namespace application\core;
 
 
-class Route
+class Router
 {
     protected $routes = [];
     protected $params = [];
@@ -50,15 +50,15 @@ class Route
                     $controller->$action();
                }
                else{
-                   echo "404";
+                   View::errorPage('404');
                }
            }
            else{
-               echo "404";
+               View::errorPage('404');
            }
        }
        else{
-           echo "404";
+           View::errorPage('404');
        }
     }
 }
