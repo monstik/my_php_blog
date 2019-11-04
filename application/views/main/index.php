@@ -1,9 +1,9 @@
 <h1>Главная страница</h1>
 <div>
-    <h2>Привет <?php echo $name ?></h2>
-    <p>Вам <?php echo $age ?> лет?</p>
-    <div>
-        <button>Да</button>
-        <button>Нет</button>
-    </div>
+    <?php
+    foreach ($news as $val) :?>
+        <h2><?php echo $val['title'] ?></h2>
+        <p><?php echo $val['description'] ?></p>
+    <?php endforeach;?>
+
 </div>

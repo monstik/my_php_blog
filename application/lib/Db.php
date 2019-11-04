@@ -11,30 +11,33 @@ class Db
     {
         $config = require_once "application/config/db.php";
         $this->db= new PDO("mysql:host={$config['host']};dbname={$config['dbname']};charset={$config['charset']}" ,$config['user'], $config['password']);
-
-
-
     }
 
-    public function query($sql)
+    public function query($sql, $params = [])
     {
+        $stmt = $this->db->prepare($sql);
 
-       $query =  $this->db->query($sql);
-        return $query;
+        if (!empty($params))
+        {
+            foreach ($params as $key => $val)
+            {
+                $stmt->bindValue(':'.$key, $val);
+            }
+        }
+        $stmt->execute();
+        return $stmt;
         
     }
 
-    public function row($sql)
+    public function row($sql, $params = [])
     {
-        $result = $this->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
+        $result = $this->query($sql,$params)->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function collum($sql)
+    public function collum($sql, $params =[])
     {
-        $result = $this->query($sql)->fetchColumn();
-        debug($result);
+        $result = $this->query($sql,$params)->fetchColumn();
         return$result;
     }
 
