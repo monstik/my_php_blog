@@ -26,4 +26,10 @@ abstract class Controller
 
     }
 
+    public function checkAcl()
+    {
+
+    }
+
+
 }
