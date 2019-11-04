@@ -8,6 +8,10 @@ return[
         'controller' => 'admin',
         'action' => 'edit'
     ],
+    'admin/logout' =>[
+        'controller' => 'admin',
+        'action' => 'logout'
+    ],
     'admin/login' =>[
         'controller' => 'admin',
         'action' => 'login'
