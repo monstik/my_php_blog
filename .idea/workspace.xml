@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2db03df8-8a03-4c46-8e90-d971b6256569" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/acl/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/acl/main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/config/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/home-bg2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/home-bg.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +37,9 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\public_html\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\public_html\application" />
       <recent name="C:\xampp\htdocs\public_html\public" />
@@ -75,7 +70,7 @@
       <workItem from="1572785671557" duration="19065000" />
       <workItem from="1572860201688" duration="9918000" />
       <workItem from="1572890506147" duration="4489000" />
-      <workItem from="1572950339774" duration="13826000" />
+      <workItem from="1572950339774" duration="17184000" />
     </task>
     <servers />
   </component>
