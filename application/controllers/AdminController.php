@@ -17,6 +17,24 @@ class AdminController extends Controller
 
     public function loginAction()
     {
+
+        if (isset($_SESSION['admin'])) {
+            $this->view->redirect('admin/add');
+        }
+
+        if (!empty($_POST)) {
+
+            if ($this->model->loginValidation($_POST)) {
+                $_SESSION['admin'] = true;
+                $this->view->location('admin/add');
+            }
+            else
+            {
+                $this->view->message('Error', $this->model->error);
+            }
+
+        }
+
         $this->view->Render("Вход");
     }
 
@@ -37,7 +55,8 @@ class AdminController extends Controller
 
     public function logoutAction()
     {
-        $this->view->redirect('/');
+        unset($_SESSION['admin']);
+        $this->view->redirect('');
 
     }
 }

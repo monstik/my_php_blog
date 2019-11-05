@@ -18,6 +18,7 @@ class Router
 
     public function add($route, $params)
     {
+        $route = preg_replace('/{([a-z]+):([^\}]+)}/', '(?P<\1>\2)', $route);
         $route = "#^" . $route . "$#";
         $this->routes[$route] = $params;
     }
@@ -26,9 +27,17 @@ class Router
     {
         foreach ($this->routes as $route => $params) {
             $url = trim($_SERVER['REQUEST_URI'], '/');
-
             if (preg_match("$route", "$url", $matches))
             {
+                foreach ($matches as $key => $val) {
+                    if(is_string($key))
+                    {
+                        if(is_numeric($val))
+                        {
+                            $params['key'] = (int)$val;
+                        }
+                    }
+                }
               $this->params = $params;
               return true;
             }
@@ -41,6 +50,7 @@ class Router
     {
        if ($this->match())
        {    $path = "application\controllers\\" . ucfirst($this->params['controller']) ."Controller";
+
            if(class_exists($path))
            {
                $action = "{$this->params['action']}Action";

@@ -25,12 +25,21 @@ class View
 
     }
 
-    public function redirect($location)
+    public function redirect($url)
     {
-        header("Location: $location");
+        header('Location:  /'.$url);
         exit;
     }
 
+    public function location($url)
+    {
+        exit(json_encode(['url' => $url]));
+    }
+
+    public function message($status, $message)
+    {
+        exit(json_encode(['status' => $status, 'message' => $message]));
+    }
 
     public static function errorPage($code)
     {

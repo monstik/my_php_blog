@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2db03df8-8a03-4c46-8e90-d971b6256569" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/acl/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/acl/main.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/config/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/posts.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +34,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -36,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\public_html\application" />
       <recent name="C:\xampp\htdocs\public_html\public" />
     </key>
   </component>
@@ -56,7 +67,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c688c2ad-42f9-48a3-80eb-405949172311" name="Default Changelist" comment="" />
+      <changelist id="2db03df8-8a03-4c46-8e90-d971b6256569" name="Default Changelist" comment="" />
       <created>1572785667011</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -64,6 +75,7 @@
       <workItem from="1572785671557" duration="19065000" />
       <workItem from="1572860201688" duration="9918000" />
       <workItem from="1572890506147" duration="4489000" />
+      <workItem from="1572950339774" duration="13826000" />
     </task>
     <servers />
   </component>

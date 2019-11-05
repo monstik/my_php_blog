@@ -21,6 +21,7 @@
                                         <td><a href="/admin/delete/<?php echo $val['id']; ?>" class="btn btn-danger">Удалить</a></td>
                                     </tr>
                                 <?php endforeach; ?>
+
                             </table>
                             <?php echo $pagination; ?>
                         <?php endif; ?>

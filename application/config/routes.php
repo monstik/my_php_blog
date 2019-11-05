@@ -4,7 +4,7 @@ return[
         'controller' => 'admin',
         'action' => 'add'
     ],
-    'admin/edit' =>[
+    'admin/edit/{id:\d+}' =>[
         'controller' => 'admin',
         'action' => 'edit'
     ],
@@ -32,7 +32,7 @@ return[
         'controller' => 'main',
         'action' => 'contact'
     ],
-    'post' =>[
+    'post/{id:\d+}' =>[
         'controller' => 'main',
         'action' => 'post'
     ],
