@@ -41,4 +41,9 @@ class Db
         return$result;
     }
 
+    public function lastInserId()
+    {
+        return $this->db->lastInsertId();
+    }
+
 }

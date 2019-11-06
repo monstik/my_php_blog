@@ -9,7 +9,12 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        $this->view->Render("Главная страница");
+
+        $posts = $this->model->getPosts();
+        $vars = [
+            'list' => $posts
+        ];
+        $this->view->Render("Главная страница", $vars);
     }
 
     public function aboutAction()

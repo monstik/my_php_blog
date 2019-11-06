@@ -20,6 +20,10 @@ return[
         'controller' => 'admin',
         'action' => 'posts'
     ],
+    '{id:\d+}' =>[
+        'controller' => 'main',
+        'action' => 'index'
+    ],
     '' =>[
         'controller' => 'main',
         'action' => 'index'

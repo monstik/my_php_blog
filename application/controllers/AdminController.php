@@ -27,9 +27,7 @@ class AdminController extends Controller
             if ($this->model->loginValidation($_POST)) {
                 $_SESSION['admin'] = true;
                 $this->view->location('admin/add');
-            }
-            else
-            {
+            } else {
                 $this->view->message('Error', $this->model->error);
             }
 
@@ -40,7 +38,20 @@ class AdminController extends Controller
 
     public function addAction()
     {
-        $this->view->Render("Добавить пост");
+        if (!empty($_POST)) {
+            if ($this->model->addPostValidation($_POST)) {
+
+                $this->model->addPost($_POST);
+                $this->view->message("Succes", "Пост успешно добавлен");
+
+            } else {
+                $this->view->message("Error", $this->model->error);
+            }
+        }
+
+
+        $this->view->Render("добавить пост");
+
     }
 
     public function postsAction()
