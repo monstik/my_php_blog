@@ -4,15 +4,16 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\lib\Pagination;
 
 class MainController extends Controller
 {
     public function indexAction()
     {
-
-        $posts = $this->model->getPosts();
+        $pagination = new Pagination($this->route, $this->model->getCount());
         $vars = [
-            'list' => $posts
+            'list' => $this->model->getPostList($this->route),
+            'pagination' => $pagination->getPages(),
         ];
         $this->view->Render("Главная страница", $vars);
     }

@@ -20,7 +20,7 @@ return[
         'controller' => 'admin',
         'action' => 'posts'
     ],
-    '{id:\d+}' =>[
+    'main/index/{page:\d+}' =>[
         'controller' => 'main',
         'action' => 'index'
     ],

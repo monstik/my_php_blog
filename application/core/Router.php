@@ -34,7 +34,7 @@ class Router
                     {
                         if(is_numeric($val))
                         {
-                            $params['key'] = (int)$val;
+                            $params['page'] = (int)$val;
                         }
                     }
                 }

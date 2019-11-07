@@ -6,10 +6,18 @@ use application\core\Model;
 
 class Main extends Model
 {
-    public function getPosts()
+    public function getPostList($route)
+    {  	$max = 10;
+        $params = [
+            'max' => $max,
+            'start' => ((($route['page'] ?? 1) - 1) * $max),
+        ];
+        return $this->db->row('SELECT * FROM posts ORDER BY id DESC LIMIT :start, :max', $params);
+    }
+
+    public function getCount()
     {
-        $data = $this->db->row('SELECT id, name, description FROM posts LIMIT 1, 20');
-       return $data;
+        return $this->db->collum("SELECT COUNT(*) FROM posts");
     }
 
 }
