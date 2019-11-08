@@ -10,11 +10,11 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        $pagination = new Pagination($this->route, $this->model->getCount());
-        $vars = [
-            'list' => $this->model->getPostList($this->route),
-            'pagination' => $pagination->getPages(),
-        ];
+     $pagination = new Pagination($this->route, $this->model->getCount());
+     $vars = [
+         'list' => $this->model->getPostList($this->route),
+         'pagination' => $pagination->getPages(),
+     ];
         $this->view->Render("Главная страница", $vars);
     }
 

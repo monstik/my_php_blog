@@ -5,6 +5,8 @@ namespace application\controllers;
 
 
 use application\core\Controller;
+use application\lib\Pagination;
+use application\models\Main;
 
 class AdminController extends Controller
 {
@@ -39,7 +41,7 @@ class AdminController extends Controller
     public function addAction()
     {
         if (!empty($_POST)) {
-            if ($this->model->addPostValidation($_POST)) {
+            if ($this->model->addPostValidation($_POST, 'add')) {
 
                 $this->model->addPost($_POST);
                 $this->view->message("Succes", "Пост успешно добавлен");
@@ -55,13 +57,40 @@ class AdminController extends Controller
     }
 
     public function postsAction()
-    {
-        $this->view->Render("Посты");
+    {   $mainModel = new Main;
+        $pagination = new Pagination($this->route, $mainModel->getCount());
+        $vars = [
+            'list' => $mainModel->getPostList($this->route),
+            'pagination' => $pagination->getPages(),
+        ];
+        $this->view->Render("Посты", $vars);
     }
 
     public function editAction()
     {
-        $this->view->Render("Редактировать пост");
+       if (!$this->model->is_post_exist($this->route['page']))
+       {
+           $this->view->errorPage(404);
+       }
+
+       if(!empty($_POST))
+       {
+          if (!$this->model->addPostValidation($_POST, 'edit'))
+          {
+              $this->view->message('Error', $this->model->error);
+          }else{
+              $this->model->editPost($_POST, $this->route['page']);
+              $this->view->message('succes' , 'Пост успешно отредактирован');
+          }
+
+
+
+       }
+
+        $vars = [
+            'data' =>  $this->model->postData($this->route['page'])[0],
+        ];
+        $this->view->Render("Редактировать пост",$vars);
     }
 
     public function logoutAction()

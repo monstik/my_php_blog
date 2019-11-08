@@ -16,6 +16,10 @@ return[
         'controller' => 'admin',
         'action' => 'login'
     ],
+    'admin/posts/{id:\d+}' =>[
+        'controller' => 'admin',
+        'action' => 'posts'
+    ],
     'admin/posts' =>[
         'controller' => 'admin',
         'action' => 'posts'

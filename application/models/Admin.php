@@ -18,7 +18,7 @@ class Admin extends Model
         return true;
     }
 
-    public function addPostValidation($post)
+    public function addPostValidation($post, $action = 'add')
     {
         if (strlen($post['name']) <= 5 or strlen($post['name']) >= 50) {
             $this->error = "Название должно иметь от 5 до 50 символов";
@@ -32,7 +32,7 @@ class Admin extends Model
             $this->error = "текс должнен иметь от 10 символов";
             return false;
         }
-        if (empty($_FILES["img"]["name"])) {
+        if (empty($_FILES["img"]["name"]) and $action != 'edit') {
             $this->error = "Вы забыли загрузить картинку";
             return false;
         }
@@ -42,7 +42,7 @@ class Admin extends Model
 
     public function addPost($post)
     {
-        $params= [
+        $params = [
             'id' => '',
             'name' => $post['name'],
             'description' => $post['description'],
@@ -52,15 +52,49 @@ class Admin extends Model
         $this->uploadFile('img', $this->db->lastInserId());
     }
 
+    public function editPost($post, $id)
+    {
+
+        $params = [
+            'id' => $id,
+            'name' => $post['name'],
+            'description' => $post['description'],
+            'text' => $post['text'],
+        ];
+
+        $this->db->query('UPDATE posts SET name = :name, description = :description, text =  :text WHERE id = :id',$params);
+
+        if($_FILES['img']['tmp_name'])
+        {
+            $this->uploadFile('img', $id);
+        }
+    }
+
+
+    public function postData($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+         return $this->db->row('SELECT * FROM posts WHERE id = :id', $params);
+
+    }
+
+    public function is_post_exist($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        return $this->db->collum('SELECT id FROM posts WHERE id = :id',$params);
+
+    }
+
     public function uploadFile($name, $id)
     {
-        if(is_uploaded_file($_FILES[$name]['tmp_name']))
-        {
+        if (is_uploaded_file($_FILES[$name]['tmp_name'])) {
             $upload_dir = "public/materials/";
-            move_uploaded_file($_FILES[$name]['tmp_name'], $upload_dir. $id . ".jpg");
-        }
-        else
-        {
+            move_uploaded_file($_FILES[$name]['tmp_name'], $upload_dir . $id . ".jpg");
+        } else {
             $this->error = "невозможно загрузить файл";
         }
     }
