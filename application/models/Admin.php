@@ -52,6 +52,16 @@ class Admin extends Model
         $this->uploadFile('img', $this->db->lastInserId());
     }
 
+    public function deletePost($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        $this->db->query('DELETE FROM posts WHERE id = :id', $params);
+        unlink('public/materials/'. $id . '.jpg');
+    }
+
+
     public function editPost($post, $id)
     {
 

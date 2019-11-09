@@ -57,7 +57,8 @@ class AdminController extends Controller
     }
 
     public function postsAction()
-    {   $mainModel = new Main;
+    {
+        $mainModel = new Main;
         $pagination = new Pagination($this->route, $mainModel->getCount());
         $vars = [
             'list' => $mainModel->getPostList($this->route),
@@ -68,29 +69,33 @@ class AdminController extends Controller
 
     public function editAction()
     {
-       if (!$this->model->is_post_exist($this->route['page']))
-       {
-           $this->view->errorPage(404);
-       }
+        if (!$this->model->is_post_exist($this->route['page'])) {
+            $this->view->errorPage(404);
+        }
 
-       if(!empty($_POST))
-       {
-          if (!$this->model->addPostValidation($_POST, 'edit'))
-          {
-              $this->view->message('Error', $this->model->error);
-          }else{
-              $this->model->editPost($_POST, $this->route['page']);
-              $this->view->message('succes' , 'Пост успешно отредактирован');
-          }
-
-
-
-       }
-
+        if (!empty($_POST)) {
+            if (!$this->model->addPostValidation($_POST, 'edit')) {
+                $this->view->message('Error', $this->model->error);
+            } else {
+                $this->model->editPost($_POST, $this->route['page']);
+                $this->view->message('succes', 'Пост успешно отредактирован');
+            }
+        }
         $vars = [
-            'data' =>  $this->model->postData($this->route['page'])[0],
+            'data' => $this->model->postData($this->route['page'])[0],
         ];
-        $this->view->Render("Редактировать пост",$vars);
+        $this->view->Render("Редактировать пост", $vars);
+    }
+
+    public function deleteAction()
+    {
+        if (!$this->model->is_post_exist($this->route['page'])) {
+            $this->view->errorPage(404);
+        }
+
+        $this->model->deletePost($this->view->route['page']);
+
+        $this->view->redirect('admin/posts');
     }
 
     public function logoutAction()

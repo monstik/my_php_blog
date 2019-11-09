@@ -63,7 +63,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <p class="copyright text-muted">Лаба web</p>
+                        <p class="copyright text-muted">2019, учу =) PHP</p>
                     </div>
                 </div>
             </div>

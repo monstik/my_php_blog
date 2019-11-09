@@ -49,7 +49,7 @@
             <footer class="sticky-footer">
                 <div class="container">
                     <div class="text-center">
-                        <small>Лаба Web</small>
+                        <small>2019, учу =) PHP</small>
                     </div>
                 </div>
             </footer>

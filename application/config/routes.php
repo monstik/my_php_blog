@@ -8,6 +8,10 @@ return[
         'controller' => 'admin',
         'action' => 'edit'
     ],
+    'admin/delete/{id:\d+}' =>[
+        'controller' => 'admin',
+        'action' => 'delete'
+    ],
     'admin/logout' =>[
         'controller' => 'admin',
         'action' => 'logout'
